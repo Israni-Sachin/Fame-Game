@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phela Nasha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: pink;
+        }
+
+        #sec {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        button {
+            border: none;
+            font-size: 25px;
+            padding: 10px;
+            background-color: aquamarine;
+            cursor: pointer;
+        }
+
+        button:hover {
+            padding: 8px;
+            border: 2px solid rebeccapurple;
+        }
+
+        p {
+            font-size: 35px;
+        }
+
+        /* #first {
+            display: flex;
+            flex-direction: column;
+        } */
+        img {
+            height: 400px;
+            width: 400px;
+        }
+
+        #change {
+            text-align: center;
+            width: 400px;
+        }
+
+        @media only screen and (max-width:400px) {
+            img {
+                width: 200px;
+                height: 200px;
+            }
+
+            #change {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">
+        <div>
+            <img src="main.gif" id="img">
+        </div>
+        <div>
+            <p id="change">Do You Love Me?</p>
+            <div id="sec">
+                <button id="btn1">Yes</button>
+                <button id="btn2">No</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="a.js"></script> -->
+    <script>
+        btn2 = document.getElementById('btn2')
+        p = document.getElementById('change')
+        img = document.getElementById('img')
+
+        click = 0
+        array = ["", "Soch le ache se", "Oyyy! Ek aur baar soch le", "Tu maar khaygi", "Manja n yaar! Kitna bhav khaegi"]
+        imgs = ["", "soch.gif", "ek.gif", "tumaar.gif", "man ja.gif"]
+
+        btn2.addEventListener('click', (e) => {
+            click = click + 1
+            change.innerText = array[click] == undefined ? array[array.length - 1] : array[click]
+            img.src = imgs[click] == undefined ? imgs[imgs.length - 1] : imgs[click]
+            btn2.addEventListener('mouseenter', (v) => {
+                if (click > 3) {
+                    btn2.style.position = 'absolute';
+                    btn2.style.top = Math.floor(Math.random() * 90 + 2) + '%'
+                    btn2.style.left = Math.floor(Math.random() * 90 + 2) + '%'
+                }
+            })
+        })
+
+        btn1.addEventListener('click', (e) => {
+            p.innerText = "I knew it !!!!"
+            img.src = "yes.gif"
+            btn1.style.display = "none"
+            btn2.style.display = "none"
+        })
+    </script>
+
+</body>
+
+</html>

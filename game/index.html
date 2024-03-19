@@ -85,16 +85,16 @@
         </div>
     </div>
 
-    <!-- <script src="a.js"></script> -->
     <script>
+        btn1 = document.getElementById('btn1')
         btn2 = document.getElementById('btn2')
         p = document.getElementById('change')
         img = document.getElementById('img')
-        
+
         click = 0
         array = ["", "Soch le ache se", "Oyyy! Ek aur baar soch le", "Tu maar khaygi", "Manja n yaar! Kitna bhav khaegi"]
         imgs = ["", "soch.gif", "ek.gif", "tumaar.gif", "man ja.gif"]
-        
+
         btn2.addEventListener('click', (e) => {
             click = click + 1
             change.innerText = array[click] == undefined ? array[array.length - 1] : array[click]
@@ -104,6 +104,8 @@
                 btn2.style.top = Math.floor(Math.random() * 90 + 2) + '%'
                 btn2.style.left = Math.floor(Math.random() * 90 + 2) + '%'
                 btn2.tabIndex = -1;
+                btn1.style.position = 'relative'
+                btn1.style.right = "25%"
             }
             btn2.addEventListener('mouseenter', (v) => {
                 if (click > 3) {

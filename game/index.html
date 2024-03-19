@@ -29,16 +29,17 @@
 
         button {
             border: none;
+            border-radius: 10px;
             font-size: 25px;
-            padding: 10px;
-            background-color: aquamarine;
+            padding: 2px 10px;
+            background-color: #fff;
             cursor: pointer;
         }
 
-        button:hover {
+        /* button:hover {
             padding: 8px;
             border: 2px solid rebeccapurple;
-        }
+        } */
 
         p {
             font-size: 35px;
@@ -51,6 +52,7 @@
         img {
             height: 400px;
             width: 400px;
+            border-radius: 10px;
         }
 
         #change {
@@ -107,7 +109,7 @@
                 btn1.style.position = 'relative'
                 btn1.style.right = "25%"
             }
-            btn2.addEventListener('mouseenter', (v) => {
+            btn2.addEventListener('mouseover', (v) => {
                 if (click > 3) {
                     btn2.style.position = 'absolute';
                     btn2.style.top = Math.floor(Math.random() * 90 + 2) + '%'

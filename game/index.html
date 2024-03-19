@@ -80,7 +80,7 @@
             <p id="change">Do You Love Me?</p>
             <div id="sec">
                 <button id="btn1">Yes</button>
-                <button id="btn2">No</button>
+                <button id="btn2" tabindex="0">No</button>
             </div>
         </div>
     </div>
@@ -90,20 +90,27 @@
         btn2 = document.getElementById('btn2')
         p = document.getElementById('change')
         img = document.getElementById('img')
-
+        
         click = 0
         array = ["", "Soch le ache se", "Oyyy! Ek aur baar soch le", "Tu maar khaygi", "Manja n yaar! Kitna bhav khaegi"]
         imgs = ["", "soch.gif", "ek.gif", "tumaar.gif", "man ja.gif"]
-
+        
         btn2.addEventListener('click', (e) => {
             click = click + 1
             change.innerText = array[click] == undefined ? array[array.length - 1] : array[click]
             img.src = imgs[click] == undefined ? imgs[imgs.length - 1] : imgs[click]
+            if (click > 3) {
+                btn2.style.position = 'absolute';
+                btn2.style.top = Math.floor(Math.random() * 90 + 2) + '%'
+                btn2.style.left = Math.floor(Math.random() * 90 + 2) + '%'
+                btn2.tabIndex = -1;
+            }
             btn2.addEventListener('mouseenter', (v) => {
                 if (click > 3) {
                     btn2.style.position = 'absolute';
                     btn2.style.top = Math.floor(Math.random() * 90 + 2) + '%'
                     btn2.style.left = Math.floor(Math.random() * 90 + 2) + '%'
+                    btn2.tabIndex = -1;
                 }
             })
         })
